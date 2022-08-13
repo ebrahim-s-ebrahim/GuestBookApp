@@ -58,8 +58,14 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="dbo\StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Guestbook.sql" />
+    <Build Include="dbo\StoredProcedures\sqGuestbook_GetAll.sql" />
+    <Build Include="dbo\StoredProcedures\spGuestbook_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spGuestbook_Delete.sql" />
+    <Build Include="dbo\StoredProcedures\spGuestbook_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spGuestbook_Update.sql" />
   </ItemGroup>
 </Project>
