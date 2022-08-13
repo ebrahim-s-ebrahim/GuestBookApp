@@ -68,4 +68,7 @@
     <Build Include="dbo\StoredProcedures\spGuestbook_Insert.sql" />
     <Build Include="dbo\StoredProcedures\spGuestbook_Update.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="GuestbookDB.publish.xml" />
+  </ItemGroup>
 </Project>
