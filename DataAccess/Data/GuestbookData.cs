@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Data
 {
-    public class GuestbookData
+    public class GuestbookData : IGuestbookData
     {
         private readonly ISqlDataAccess _db;
 
@@ -29,15 +29,18 @@ namespace DataAccess.Data
         }
 
         public Task WriteComment(GuestbookModel guestbook) =>
-            _db.SaveData(storedProcedure: "dbo.spGuestbook_Insert", new { guestbook.Name, 
-                                                                          guestbook.Email, 
-                                                                          guestbook.Comment, 
-                                                                          guestbook.DateTime });
+            _db.SaveData(storedProcedure: "dbo.spGuestbook_Insert", new
+            {
+                guestbook.Name,
+                guestbook.Email,
+                guestbook.Comment,
+                guestbook.DateTime
+            });
 
         public Task EditComment(GuestbookModel guestbook) =>
             _db.SaveData(storedProcedure: "dbo.spGuestbook_Update", guestbook);
 
-        public Task DeleteComment(int id) => 
+        public Task DeleteComment(int id) =>
             _db.SaveData(storedProcedure: "dbo.spGuestbook_Delete", new { PostId = id });
     }
 }
