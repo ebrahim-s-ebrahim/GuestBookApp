@@ -5,7 +5,8 @@ using System.Data.SqlClient;
 
 namespace DataAccess.DbAccess
 {
-    public class SqlDataAccess //talks to sql through dapper
+    public class SqlDataAccess : ISqlDataAccess
+    //talks to sql through dapper
     {
         private readonly IConfiguration _config;
 
@@ -15,7 +16,7 @@ namespace DataAccess.DbAccess
         }
 
         public async Task<IEnumerable<T>> LoadData<T, U>(string storedProcedure,
-                                                         U parameters, 
+                                                         U parameters,
                                                          string connectionId = "Default")
         {
             //get the connectionstring, create a sql connection and store it in "connection" then shut down the connection
