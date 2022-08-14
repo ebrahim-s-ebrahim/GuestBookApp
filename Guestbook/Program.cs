@@ -1,4 +1,5 @@
 using DataAccess.DbAccess;
+using Guestbook;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+app.ConfigureApi();
 
 app.Run();
